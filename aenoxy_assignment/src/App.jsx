@@ -1,7 +1,9 @@
+import SignupPage from "./pages/SignupPage"
+
 function App() {
   return (
    <>
-   <h1 className="text-center">Jai Shree Krishna</h1>
+   <SignupPage/>
    </>
   )
 }

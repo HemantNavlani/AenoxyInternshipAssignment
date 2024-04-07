@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import SignupPage from './pages/SignupPage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -11,17 +12,15 @@ const router = createBrowserRouter([
     element:<App/>,
     children:[
       {
-        path:'/',
+        path:'/signup',
         element:<SignupPage/>
       },
-      // {
-      //   path:'/login',
-      //   element:(
-      //     <AuthLayout authentication={false}>
-      //       <Login/>
-      //     </AuthLayout>
-      //   )
-      // },
+      {
+        path:'/profile',
+        element:(
+            <ProfilePage/>
+        )
+      },
       // {
       //   path:'/signup',
       //   element:(

@@ -40,7 +40,7 @@ function Signup() {
     };
 
     useEffect(()=>{
-        if (!insideUserName && name && typeof name ==='string')setUserName(name.trim().toLowerCase().replace(/[^a-zA-Z\d\s]+/g, "-").replace(/\s/g, "-"))
+        if (!insideUserName && name && typeof name ==='string')setUserName(name.trim().toLowerCase().replace(/[^a-zA-Z\d\s]+/g, "_").replace(/\s/g, "_"))
     },[name])
   return (
     <>
@@ -106,7 +106,7 @@ function Signup() {
             </div>
             </div>
             <br />
-            <button type='submit' className='bg-[#EA4B8B] font-bold text-white w-1/2 h-10 rounded-lg'>
+            <button type='submit' className='bg-[#EA4B8B] border hover:border-gray-500 font-bold text-white w-1/2 h-10 rounded-lg'>
                 Create Account
             </button>
 

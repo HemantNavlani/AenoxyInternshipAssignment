@@ -7,7 +7,7 @@ import roleImg3 from '../assets/roleImg3.png'
 import logoPink from '../assets/logoPink.png'
 import { Link } from 'react-router-dom';
 import { useSelector} from 'react-redux'
-
+import {useNavigate} from 'react-router-dom'
 const text1Arr = [
     `I'm a designer looking to share my work`,
     `I'm a looking to hire a good designer`,
@@ -21,6 +21,7 @@ const text2Arr = [
 
 
 function RolePage() {
+    const navigate = useNavigate()
     const checked1 = useSelector((state)=>state.role.role1)
     const checked2 = useSelector((state)=>state.role.role2)
     const checked3 = useSelector((state)=>state.role.role3)
@@ -28,9 +29,10 @@ function RolePage() {
     const handleSubmit = (e)=>{
         e.preventDefault();
         //make database calls
+        navigate('/verify')
     }
     document.addEventListener("keypress", function(event) {
-        event.preventDefault();
+        // event.preventDefault();
         if (event.key === "Enter") {
         document.getElementById("btn").click();
         }

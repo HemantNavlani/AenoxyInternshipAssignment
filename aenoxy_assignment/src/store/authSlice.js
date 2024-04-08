@@ -12,11 +12,11 @@ const authSlice = createSlice({
     initialState,
     reducers:{
         signup:(state,action)=>{
-            state.name = action.payload,
-            state.userName = action.payload,
-            state.email = action.payload,
-            state.password = action.payload,
-            state.check= action.payload
+            state.name = action.payload.name,
+            state.userName = action.payload.userName,
+            state.email = action.payload.email,
+            state.password = action.payload.password,
+            state.check= action.payload.check
         },
         changeMail:(state,action)=>{
             state.email = action.payload

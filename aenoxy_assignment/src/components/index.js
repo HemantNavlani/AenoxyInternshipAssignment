@@ -5,6 +5,7 @@ import Role from "./Role";
 import Header from "./Header";
 import Footer from './Footer';
 import Verify from './Verify'
+import Home from './Home'
 export{
     Signup,
     Profile,
@@ -12,5 +13,6 @@ export{
     Role,
     Header,
     Footer,
-    Verify
+    Verify,
+    Home
 }

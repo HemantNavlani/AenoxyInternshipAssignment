@@ -18,8 +18,11 @@ const authSlice = createSlice({
             state.password = action.payload,
             state.check= action.payload
         },
+        changeMail:(state,action)=>{
+            state.email = action.payload
+        }
     }
 })
 
-export const {signup} = authSlice.actions
+export const {signup,changeMail} = authSlice.actions
 export default authSlice.reducer

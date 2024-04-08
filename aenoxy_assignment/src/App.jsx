@@ -2,7 +2,7 @@ import ProfilePage from "./pages/ProfilePage"
 import RolePage from "./pages/RolePage"
 import SignupPage from "./pages/SignupPage"
 import {Outlet} from 'react-router-dom'
-import { Footer, Header, Verify } from "./components"
+import { Footer, Header, Home, Verify } from "./components"
 function App() {
   return (
    <>
@@ -10,9 +10,9 @@ function App() {
    {/* <ProfilePage/> */}
     {/* <RolePage/> */}
     <Header/>
-    <Verify/>
+    {/* <Verify/> */}
+    <Home/>
     <Footer/>
-    
    {/* <Outlet/> */}
    </>
   )

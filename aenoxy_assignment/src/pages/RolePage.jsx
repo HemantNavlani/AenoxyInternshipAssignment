@@ -39,7 +39,7 @@ function RolePage() {
     <>
     <div className='flex justify-start items-center gap-x-4 m-4'>
         <img src={logoPink} alt="" />
-        <Link to={'/'} className='w-8 h-8 bg-gray-300 flex p-2 rounded'>
+        <Link to={'/profile'} className='w-8 h-8 bg-gray-300 flex p-2 rounded'>
         <IoIosArrowBack className='justify-center items-center cursor-pointer' />
         </Link>
     </div>
@@ -50,8 +50,6 @@ function RolePage() {
     <Role image={roleImg2} text1={text1Arr[1]} text2={text2Arr[1]} id={2}/>
     <Role image={roleImg3} text1={text1Arr[2]} text2={text2Arr[2]} id={3}/>
     </div>
-    {/* ${ */}
-        {/* // (checked1 || checked2 || checked3) ? 'bg-[#E94B8A] */}
     <h3 className='text-2xl font-bold text-center mt-8'>Anything else? You can select multiple</h3>
     <div className='flex flex-col gap-y-4 justify-center items-center mt-8'>
     <button id='btn' type='submit' onClick={handleSubmit} className='bg-[#E94B8A] w-48 text-white font-semibold p-2 h-12 rounded-lg disabled:bg-[#F7B8D0] hover:bg-[#ef3a83]'

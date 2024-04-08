@@ -31,7 +31,7 @@ function Role({image,text1,text2,id}) {
         </p>
     )
     }
-    <button className={`w-5 h-5 border rounded-[100%] border-gray-400 ${
+    <button className={`w-5 h-5 border rounded-[100%] border-gray-400 outline-none ${
         checked
           ? 'bg-[#E84B89] border-none'
           : ''

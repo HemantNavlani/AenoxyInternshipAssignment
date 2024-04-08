@@ -16,13 +16,13 @@ function Role({image,text1,text2,id}) {
     }
   return (
     <>
-    <div className={`w-64 h-64 border border-gray-300 flex flex-col p-2 space-y-2 justify-center items-center rounded-xl ${checked ? 'border border-2 border-[#E84B89]' :''}`}>
+    <div className={`w-64 h-64 border border-gray-300 flex flex-col p-2 space-y-2 justify-center items-center rounded-xl ${checked ? 'border-2 border-[#E84B89] ' :''}`} onClick={handleClick}>
    
     <img src={image} alt="" className={`${
-        checked ? 'relative mt-[-150px] size-48 z-10':''
+        checked ? 'relative mt-[-100px] h-38 w-45 z-10':''
     }`} />
 
-    <h3 className='text-center font-bold'>{text1} </h3>
+    <h3 className='text-center font-bold'>{text1}  </h3>
 
     {
     checked && (
@@ -35,7 +35,7 @@ function Role({image,text1,text2,id}) {
         checked
           ? 'bg-[#E84B89] border-none'
           : ''
-      }`} onClick={handleClick}>
+      }`} >
 
     <FaCheck className='text-white size-3 ml-[4px]'/>
       </button>

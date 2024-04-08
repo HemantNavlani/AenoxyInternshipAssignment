@@ -8,7 +8,7 @@ import { profile } from '../store/profSlice';
 function Profile() {
   const [image,setImage] = useState();
   const [location,setLocation] = useState()
-  const defaulImages = [
+  const defaultImages = [
     'https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg',
     'https://st2.depositphotos.com/2703645/7304/v/450/depositphotos_73040253-stock-illustration-male-avatar-icon.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkP9-rNKatf1KHOiVoFWwvmm3FbAlxCimrh9tMvS49Yg&s'
@@ -17,7 +17,8 @@ function Profile() {
   const dispatch = useDispatch()
   const[disabled,setDisabled] = useState(true);
   useEffect(()=>{
-    if (image && location) setDisabled(false)
+    if ((image) && location) setDisabled(false)
+    if (!image || !location || image==='no') setDisabled(true)
   },[image,location])
 
   const navigate = useNavigate()
@@ -26,8 +27,16 @@ function Profile() {
     e.preventDefault()
     dispatch(profile({image,location}))
     //database calls 
-    navigate('/')
+    // navigate('/')
   }
+
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+    document.getElementById("btn").click();
+    }
+  });
+
+
   return (
     <div>
         <img src={logoPink} alt="" className='m-8 h-16 w-28'/>
@@ -37,6 +46,8 @@ function Profile() {
             <h1 className='text-3xl font-bold mb-4'>Welcome! Let&apos;s create your profile </h1>
             <p className='text-gray-500 mb-8'>Let others get to know you better! You can do these later</p>
 
+
+           
             <form onSubmit={handleSubmit}>
             <h3 className='font-bold mb-4'>Add an avatar</h3>
            
@@ -51,7 +62,7 @@ function Profile() {
             }}/>
             <img src={image} alt="" className='border-[3px] rounded-[100%] border-gray-300 w-48 h-48 border-dashed flex-none'/>
             <label htmlFor="image">
-              {(!image || image==='') &&
+              {(!image || image==='no') &&
             <BiSolidCameraPlus className='absolute size-7 mx-[-140px] my-[85px] text-gray-500 cursor-pointer'/>
               }
             </label>
@@ -60,10 +71,10 @@ function Profile() {
             <label htmlFor="image" className='border  border-gray-300 hover:border-gray-500 font-bold rounded w-36 p-2 text-center cursor-pointer'>Choose Image</label>
   
             <select name="" id="select" className='text-sm outline-none' onChange={e=>setImage(e.target.value)}>
-              <option value={''} defaultValue className='text-gray-500'>Or Chose one of our Defaults</option>
-              <option value={defaulImages[0]}>Avatar 1</option>
-              <option value={defaulImages[1]}>Avatar 2</option>
-              <option value={defaulImages[2]}>Avatar 3</option>
+              <option value={'no'} defaultValue className='text-gray-500'>Or Chose one of our Defaults</option>
+              <option value={defaultImages[0]}>Avatar 1</option>
+              <option value={defaultImages[1]}>Avatar 2</option>
+              <option value={defaultImages[2]}>Avatar 3</option>
             </select>
             </div>
             </div>
@@ -75,7 +86,7 @@ function Profile() {
         </div>
 
 
-        <button className='bg-[#EA4B8B] mt-4 w-1/2 rounded-lg p-2 text-white font-semibold disabled:bg-[#F7B8D0]' type='submit' disabled={disabled}>
+        <button id='btn' className='bg-[#EA4B8B] mt-4 w-1/2 rounded-lg p-2 text-white font-semibold disabled:bg-[#F7B8D0]' type='submit' disabled={disabled}>
             Next
         </button>
 

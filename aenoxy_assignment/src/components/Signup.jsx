@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import signupImg from '../assets/signupPageArt.png'
 import { Link, useNavigate } from 'react-router-dom'
 import dribbleLogo from '../assets/dribbleLogo.png'
+import { useDispatch} from 'react-redux';
+import { signup } from '../store/authSlice';
+
 function Signup() {
     const [error,setError] = useState(null)
     const[name, setName] = useState('');
@@ -10,8 +13,8 @@ function Signup() {
     const [password,setPassword] = useState()
     const [check,setCheck]  = useState(false)
     const [insideUserName,setInsideUserName] = useState(false)
-
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const handleSubmit = (e)=>{
         setError(null)
         e.preventDefault();
@@ -29,7 +32,7 @@ function Signup() {
         }
 
         //here we can implement the code of sending the form data to backend 
-
+        dispatch(signup({name,userName,email,password,check}))
         // navigate('/profile')
     }
 
@@ -87,7 +90,7 @@ function Signup() {
 
             <label htmlFor="email" className='font-bold'>Email</label>
             <br />
-            <input type="email" formNoValidate value={email} onInput={(e)=>setEmail(e.target.value)}  className='bg-[#F3F3F3] rounded h-8 mb-8 w-full p-2' placeholder='xyz@gmail.com' name="" id="email" />
+            <input type="text" value={email} onInput={(e)=>setEmail(e.target.value)}  className='bg-[#F3F3F3] rounded h-8 mb-8 w-full p-2' placeholder='xyz@gmail.com' name="" id="email" />
             <br />
 
             <label htmlFor="password" className='font-bold mt-8'>Password</label>

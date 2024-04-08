@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Role } from '../components'
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -6,7 +6,9 @@ import roleImg1 from '../assets/roleImg1.png'
 import roleImg2 from '../assets/roleImg2.png'
 import roleImg3 from '../assets/roleImg3.png'
 import logoPink from '../assets/logoPink.png'
+import { useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
+import { role1, role2, role3 } from '../store/roleSlice';
 const text1Arr = [
     `I'm a designer looking to share my work`,
     `I'm a looking to hire a designer`,
@@ -29,9 +31,9 @@ function RolePage() {
     <h1 className='text-center text-4xl font-bold mb-4'>What brings you to dribble ?</h1>
     <p className='text-gray-500 text-center'>Select the options that best describes you. Don&apos;t worry, you can explore other options later.</p>
     <div className='flex flex-row flex-wrap justify-center items-center gap-x-10 mt-20'>
-    <Role image={roleImg1} text1={text1Arr[0]} text2={text2Arr[0]}/>
-    <Role image={roleImg2} text1={text1Arr[1]} text2={text2Arr[1]}/>
-    <Role image={roleImg3} text1={text1Arr[2]} text2={text2Arr[2]}/>
+    <Role image={roleImg1} text1={text1Arr[0]} text2={text2Arr[0]} id={1}/>
+    <Role image={roleImg2} text1={text1Arr[1]} text2={text2Arr[1]} id={2}/>
+    <Role image={roleImg3} text1={text1Arr[2]} text2={text2Arr[2]} id={3}/>
     </div>
 
     <h3 className='text-2xl font-bold text-center mt-8'>Anything else? You can select multiple</h3>

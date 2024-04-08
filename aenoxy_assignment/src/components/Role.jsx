@@ -1,9 +1,16 @@
-import React, { useState } from 'react'
-import roleImg1 from '../assets/roleImg1.png'
-
+import React, { useEffect, useState } from 'react'
+import {useDispatch} from 'react-redux'
 import { FaCheck } from "react-icons/fa";
-function Role({image,text1,text2}) {
+import { role1, role2, role3 } from '../store/roleSlice';
+function Role({image,text1,text2,id}) {
+
     const [checked,setChecked] = useState(false)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        if (id==1) dispatch(role1(checked))
+        if (id==2) dispatch(role2(checked))
+        if (id==3) dispatch(role3(checked))
+    },[checked])
     const handleClick = ()=>{
         setChecked(!checked)
     }

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import logoPink from '../assets/logoPink.png'
 import { BiSolidCameraPlus } from "react-icons/bi";
 import {useNavigate} from 'react-router-dom'
+import { useDispatch} from 'react-redux';
+import { profile } from '../store/profSlice';
+
 function Profile() {
   const [image,setImage] = useState();
   const [location,setLocation] = useState()
@@ -11,6 +14,7 @@ function Profile() {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkP9-rNKatf1KHOiVoFWwvmm3FbAlxCimrh9tMvS49Yg&s'
   ]
 
+  const dispatch = useDispatch()
   const[disabled,setDisabled] = useState(true);
   useEffect(()=>{
     if (image && location) setDisabled(false)
@@ -20,6 +24,7 @@ function Profile() {
 
   const handleSubmit=(e)=>{ 
     e.preventDefault()
+    dispatch(profile({image,location}))
     //database calls 
     navigate('/')
   }

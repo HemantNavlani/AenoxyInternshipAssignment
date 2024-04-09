@@ -4,8 +4,9 @@
 
 1. Copy the code / Bring the code in your system
 2. Open the terminal
-3. Run the command "npm install" to install node modules
-4. Run the command "npm run dev" to run the project
+3. Run the command cd aenoxy_assignment
+4. Run the command "npm install" to install node modules
+5. Run the command "npm run dev" to run the project
 
 # End Points -
 

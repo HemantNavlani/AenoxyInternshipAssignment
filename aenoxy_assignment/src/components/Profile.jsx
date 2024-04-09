@@ -27,7 +27,7 @@ function Profile() {
     e.preventDefault()
     dispatch(profile({image,location}))
     //database calls 
-    // navigate('/')
+    navigate('/role')
   }
 
   document.addEventListener("keypress", function(event) {

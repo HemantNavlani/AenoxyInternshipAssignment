@@ -9,8 +9,8 @@ const profSlice = createSlice({
     initialState,
     reducers:{
         profile:(state,action)=>{
-            state.image = action.payload,
-            state.location = action.payload
+            state.image = action.payload.image,
+            state.location = action.payload.location
         },
     }
 })
